@@ -9,17 +9,6 @@ sys.path.append(os.path.join(sys.path[0], 'bot'))
 from config import GOOGLE_TABLE_LINK
 
 
-#декоратор синглтон, чтобы было только одно подключение
-def singleton(class_):
-    instances = {}
-    def getinstance(*args, **kwargs):
-        if class_ not in instances:
-            instances[class_] = class_(*args, **kwargs)
-        return instances[class_]
-    return getinstance
-
-
-@singleton
 class Google_sheets:
 
     TABLE_URL = GOOGLE_TABLE_LINK
